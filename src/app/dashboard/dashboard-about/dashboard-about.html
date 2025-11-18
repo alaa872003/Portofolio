@@ -1,0 +1,36 @@
+<div class="w-full min-h-screen bg-gray-100 p-4 sm:p-6 flex justify-center">
+  <div class="w-full max-w-4xl bg-white rounded-xl shadow p-6 sm:p-8">
+
+    <h2 class="text-2xl font-bold mb-6 text-center">About Section</h2>
+
+    <form [formGroup]="aboutForm" (ngSubmit)="submit()" class="space-y-5">
+
+      <div>
+        <label class="block font-medium mb-1">Title</label>
+        <input type="text" formControlName="title" class="w-full p-2 border rounded" />
+      </div>
+
+      <div>
+        <label class="block font-medium mb-1">Headline</label>
+        <input type="text" formControlName="headline" class="w-full p-2 border rounded" />
+      </div>
+
+      <div>
+        <label class="block font-medium mb-1">About</label>
+        <textarea rows="5" formControlName="about" class="w-full p-2 border rounded"></textarea>
+      </div>
+
+      <div>
+        <label class="block font-medium mb-1">Location</label>
+        <input type="text" formControlName="location" class="w-full p-2 border rounded" />
+      </div>
+
+      <button type="submit" [disabled]="saving"
+        class="w-full bg-[#111827] hover:bg-[#4b5563] text-white font-semibold py-2 rounded-lg">
+        {{ saving ? 'Saving...' : 'Save Changes' }}
+      </button>
+
+    </form>
+
+  </div>
+</div>

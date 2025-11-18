@@ -1,0 +1,69 @@
+<div class="w-full min-h-screen bg-gray-100 p-4 sm:p-6 flex justify-center">
+  <div class="w-full max-w-4xl bg-white rounded-xl shadow p-6 sm:p-8">
+
+    <h2 class="text-2xl font-bold mb-6 text-center">Manage Skills</h2>
+
+    <form [formGroup]="skillForm" class="space-y-4">
+
+      <input formControlName="name" placeholder="Skill Name" class="w-full p-2 border rounded" />
+
+      <input type="number" formControlName="percentage" placeholder="Percentage"
+       class="w-full p-2 border rounded" />
+
+      <div class="flex gap-4 flex-wrap">
+
+        <button *ngIf="!editingSkillName"
+         (click)="addSkill()"
+         class="bg-[#111827] hover:bg-[#4b5563] text-white px-4 py-2 rounded">
+          Add Skill
+        </button>
+
+        <button *ngIf="editingSkillName"
+         (click)="updateSkill()"
+         class="bg-[#111827] hover:bg-[#4b5563] text-white px-4 py-2 rounded">
+          Update
+        </button>
+
+        <button *ngIf="editingSkillName"
+         (click)="cancelEdit()"
+         class="px-4 py-2 rounded border">
+          Cancel
+        </button>
+
+      </div>
+    </form>
+
+    <div class="mt-8">
+      <h3 class="text-lg font-semibold mb-3">Current Skills</h3>
+
+      <table class="w-full border-collapse bg-white rounded shadow">
+        <thead class="bg-gray-200">
+          <tr>
+            <th class="p-2 text-left">Name</th>
+            <th class="p-2 text-left">Percentage</th>
+            <th class="p-2 text-left">Icon</th>
+            <th class="p-2">Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let skill of skills" class="border-t">
+            <td class="p-2">{{ skill.name }}</td>
+            <td class="p-2">{{ skill.percentage }}%</td>
+            <td class="p-2">
+              <img [src]="skill.icon" width="40" />
+            </td>
+            <td class="p-2 flex gap-2">
+              <button class="bg-[#4b5563] text-white px-3 py-1 rounded hover:bg-[#374151]"
+               (click)="startEdit(skill)">Edit</button>
+
+              <button class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700"
+               (click)="deleteSkill(skill.name)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

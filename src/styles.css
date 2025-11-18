@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F8F8; /* Soft Off-White Background */
+            color: #1F2937; /* Dark text */
+            scroll-behavior: smooth;
+            direction: ltr; /* LTR for English */
+        }
+        h1, h2, h3 {
+            font-weight: 800; /* Extra bold headings */
+            color: #111827; /* Deep black for headings */
+        }
+        /* Custom Keyframe for subtle button animation */
+        @keyframes subtle-move {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-2px); }
+        }
+
+        /* Style for interactive elements */
+        .primary-button {
+            background-color: #111827;
+            color: #FFFFFF;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            font-weight: 600;
+        }
+        .primary-button:hover {
+            background-color: #374151;
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.15);
+            animation: subtle-move 1.5s ease-in-out infinite;
+        }
+        .card {
+            background-color: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+            transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+        }
+        .card:hover {
+            border-color: #111827;
+            transform: translateY(-4px); /* Lift effect on hover */
+            box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.15), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+        }

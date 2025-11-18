@@ -1,0 +1,27 @@
+
+        <div *ngIf="profile">
+    <section id="hero" class="min-h-[85vh] flex items-center justify-center text-center p-8 bg-white border-b border-gray-200">
+        <div class="max-w-4xl mx-auto">
+
+            <div class="w-36 h-36 rounded-full mx-auto mb-6 overflow-hidden border-4 border-gray-300 shadow-xl">
+                <img
+                    [src]="'http://localhost:3000/profileFiles/' + profile.profileImg"
+                    [alt]="profile.name"
+                    class="w-full h-full object-cover"
+                />
+            </div>
+
+            <h1 class="text-6xl md:text-7xl font-extrabold leading-tight text-gray-900 mb-4 tracking-tight">
+                Hi, I'm <span class="text-gray-600">{{profile.name}}.</span>
+            </h1>
+
+            <p class="text-2xl text-gray-700 font-medium mb-10 max-w-2xl mx-auto">
+                {{profile.headline}}
+            </p>
+
+            <a routerLink="/project" class="primary-button inline-block text-xl">
+                View My Work <i class="fas fa-arrow-right ml-3"></i>
+            </a>
+        </div>
+    </section>
+</div>

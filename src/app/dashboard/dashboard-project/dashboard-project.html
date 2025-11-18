@@ -1,0 +1,90 @@
+<div class="w-full min-h-screen bg-gray-100 p-4 sm:p-6 flex justify-center">
+  <div class="w-full max-w-4xl bg-white rounded-xl shadow p-6 sm:p-8">
+
+    <h2 class="text-2xl font-bold mb-6 text-center">
+      {{ editingTitle ? 'Edit Project' : 'Add New Project' }}
+    </h2>
+
+    <form [formGroup]="projectForm" (ngSubmit)="onSubmit()" class="space-y-4">
+
+      <label>Title:</label>
+      <input formControlName="title" type="text" class="w-full p-2 border rounded" />
+
+      <label>Description:</label>
+      <textarea formControlName="description" class="w-full p-2 border rounded"></textarea>
+
+      <label>GitHub Link:</label>
+      <input formControlName="githubLink" type="text" class="w-full p-2 border rounded" />
+
+      <label>Live Link:</label>
+      <input formControlName="liveLink" type="text" class="w-full p-2 border rounded" />
+
+      <label>Project Image:</label>
+      <input type="file" (change)="onFileSelected($event)" />
+
+      <img *ngIf="previewImg" [src]="previewImg" class="w-40 rounded shadow" />
+
+      <button class="bg-[#111827] hover:bg-[#4b5563] text-white px-4 py-2 rounded" type="submit">
+        {{ editingTitle ? 'Update Project' : 'Add Project' }}
+      </button>
+
+      <button *ngIf="editingTitle"
+        type="button"
+        (click)="cancelEdit()"
+        class="px-4 py-2 rounded border">
+        Cancel
+      </button>
+
+    </form>
+
+    <hr class="my-8" />
+
+    <h3 class="text-xl font-semibold mb-4">All Projects</h3>
+
+    <table class="w-full border-collapse bg-white rounded shadow">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="p-2">Image</th>
+          <th class="p-2">Title</th>
+          <th class="p-2">Description</th>
+          <th class="p-2">Links</th>
+          <th class="p-2">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let p of projects" class="border-t">
+          <td class="p-2">
+            <img [src]="'http://localhost:3000/projectFiles/' + p.image" class="w-16 rounded" />
+          </td>
+
+          <td class="p-2">{{ p.title }}</td>
+          <td class="p-2">{{ p.description }}</td>
+
+          <td class="p-2">
+            <a [href]="p.githubLink" target="_blank">
+              <i class="devicon-github-original colored text-xl"></i>
+            </a>
+            -
+            <a [href]="p.liveLink" target="_blank">
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </td>
+
+          <td class="p-2 flex gap-2">
+            <button class="bg-[#4b5563] text-white px-3 py-1 rounded" (click)="startEdit(p)">
+              Edit
+            </button>
+
+            <button class="bg-red-600 text-white px-3 py-1 rounded"
+             (click)="deleteProject(p.title)">
+              Delete
+            </button>
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

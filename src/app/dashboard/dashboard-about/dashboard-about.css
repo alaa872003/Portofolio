@@ -1,0 +1,31 @@
+.dashboard-about-container {
+  max-width: 900px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+}
+
+label {
+  display: block;
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+input, textarea {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #cfcfcf;
+  font-size: 15px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+

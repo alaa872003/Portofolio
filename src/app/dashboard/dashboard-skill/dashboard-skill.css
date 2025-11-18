@@ -1,0 +1,78 @@
+/* Title */
+.title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* FORM */
+.skill-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.skill-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 200px;
+  font-size: 14px;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* BUTTONS */
+.btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+  color: #fff;
+}
+
+.add-btn {
+  background: #4CAF50;
+}
+
+.edit-btn {
+  background: #1E90FF; /* أزرق مناسب */
+}
+
+.cancel-btn {
+  background: #777;
+}
+
+.delete-btn {
+  background: #e74c3c; /* أحمر */
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+/* TABLE */
+.skills-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.skills-list th,
+.skills-list td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.skills-list img {
+  border-radius: 4px;
+}
+
+

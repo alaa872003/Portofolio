@@ -1,0 +1,21 @@
+<div class="contact-container">
+
+  <h2 class="title">All Contact Messages</h2>
+
+  <div *ngIf="messages.length === 0" class="empty">
+    No messages yet.
+  </div>
+
+  <div class="card-list">
+    <div class="card" *ngFor="let msg of messages">
+
+      <p><strong>Name:</strong> {{ msg.name }}</p>
+      <p><strong>Email:</strong> {{ msg.email }}</p>
+      <p><strong>Message:</strong></p>
+      <p class="message-box">{{ msg.message }}</p>
+
+      <button class="btn delete" (click)="delete(msg.email)">Delete</button>
+    </div>
+  </div>
+
+</div>

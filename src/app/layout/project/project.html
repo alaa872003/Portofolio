@@ -1,0 +1,11 @@
+        <section id="projects" class="container mx-auto py-24 px-6 md:px-12">
+            <h2 class="text-4xl text-center mb-16 font-extrabold">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+
+                @for (project of projects; track project) {
+            <app-project-card [project]="project"></app-project-card>
+
+        }
+
+            </div>
+        </section>

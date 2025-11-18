@@ -1,0 +1,231 @@
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.main-title {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.form-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ddd;
+  margin-bottom: 25px;
+}
+
+.form-box label {
+  font-weight: 600;
+  margin-top: 10px;
+  display: block;
+}
+
+.form-box input,
+.form-box textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 5px;
+}
+
+.preview {
+  width: 140px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.btn {
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-right: 10px;
+}
+
+.add {
+  background: #007bff;
+  color: #fff;
+}
+
+.cancel {
+  background: #777;
+  color: #fff;
+}
+
+.edit {
+  background: #1abc9c;
+  color: #fff;
+}
+
+.delete {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.project-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.project-table th,
+.project-table td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.thumb {
+  width: 80px;
+  border-radius: 8px;
+}
+
+/* MAIN CONTAINER */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* TITLES */
+.main-title,
+.list-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+/* FORM BOX */
+.form-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-box input,
+.form-box textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.preview {
+  width: 140px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  width: fit-content;
+}
+
+
+.project-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.project-table th,
+.project-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.thumb {
+  width: 80px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+
+  .form-box {
+    padding: 15px;
+  }
+
+  .project-table,
+  .project-table thead,
+  .project-table tbody,
+  .project-table th,
+  .project-table tr,
+  .project-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .project-table thead {
+    display: none;
+  }
+
+  .project-table tr {
+    margin-bottom: 16px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.07);
+  }
+
+  .project-table td {
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    text-align: right;
+    border: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .project-table td:last-child {
+    border-bottom: none;
+  }
+
+  .project-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    text-align: left;
+    flex: 1;
+  }
+
+  .thumb {
+    width: 100%;
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 20px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
